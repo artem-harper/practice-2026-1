@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Сайт проектной (учебной) практики — Git, Markdown, статический веб-сайт" />
   <title>Проектная практика</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -10,11 +12,8 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="logo" href="#home">
-      Проектная <span>практика</span>
-    </a>
-
-    <nav>
+    <a class="logo" href="#home">Проектная <span>практика</span></a>
+    <nav aria-label="Основная навигация">
       <ul class="nav-list">
         <li><a href="#home">Главная</a></li>
         <li><a href="#about">О проекте</a></li>
@@ -26,101 +25,296 @@
   </div>
 </header>
 
+<!-- Главная -->
 <section class="hero" id="home">
   <div class="hero-inner">
-
     <div>
+      <div class="hero-meta">
+        <span class="tag">Группа 251-332</span>
+        <span class="tag">Февраль — май 2026</span>
+        <span class="tag">72 академических часа</span>
+      </div>
       <h1>Проектная (учебная) практика</h1>
-
       <p class="lead">
-        Учебный проект по освоению Git, Markdown и созданию статического сайта.
+        Учебный проект по освоению Git, оформлению документации в Markdown
+        и созданию статического веб-сайта о ходе практики. Сайт фиксирует
+        цели, участников, журнал работ и полезные материалы.
       </p>
-
       <a href="#about" class="btn">О проекте</a>
+      <a href="#journal" class="btn btn-outline">Журнал прогресса</a>
     </div>
-
     <figure class="hero-figure">
-      <img src="images/hero-practice.png"
-           alt="Git и HTML/CSS" />
+      <img src="images/hero-practice.png" alt="Схема: репозиторий, HTML/CSS и Git" width="480" height="320" />
     </figure>
-
   </div>
 </section>
 
-<main>
+<main>    <section class="page-section" aria-labelledby="annotation-title">
+  <h2 class="page-title" id="annotation-title">Аннотация</h2>
+  <p class="page-intro">
+    В рамках проектной практики студент выполняет базовую часть задания:
+    настраивает репозиторий, готовит материалы в Markdown, разрабатывает
+    статический сайт, взаимодействует с организацией-партнёром и
+    формирует отчёт. Данный ресурс — публичное представление этой работы.
+  </p>
 
-  <section class="page-section">
-    <h2 class="page-title">Аннотация</h2>
+  <div class="card-grid">
+    <article class="card">
+      <img src="images/git-repo.png" alt="Ветки Git" />
+      <h3>Управление версиями</h3>
+      <p>Клонирование, коммиты, ветки и осмысленные сообщения к изменениям в репозитории.</p>
+    </article>
+    <article class="card">
+      <img src="images/markdown-doc.png" alt="Документ Markdown" />
+      <h3>Документация</h3>
+      <p>README, журнал прогресса и отчёты оформляются в формате Markdown.</p>
+    </article>
+    <article class="card">
+      <img src="images/web-stack.png" alt="HTML и CSS" />
+      <h3>Статический сайт</h3>
+      <p>Разделы на одной странице HTML; оформление — в файле <code>css/style.css</code>.</p>
+    </article>
+  </div>
+</section>
 
+  <!-- О проекте -->
+  <section class="page-section page-section--alt" id="about" aria-labelledby="about-title">
+    <h2 class="page-title" id="about-title">О проекте</h2>
     <p class="page-intro">
-      В рамках практики студент осваивает Git,
-      Markdown и разработку HTML/CSS сайта.
-    </p>
-  </section>
-
-  <section class="page-section page-section--alt" id="about">
-
-    <h2 class="page-title">О проекте</h2>
-
-    <p class="page-intro">
-      Проектная практика направлена на развитие навыков
-      работы с Git и веб-разработкой.
+      Проектная (учебная) практика — обязательная часть подготовки по
+      направлениям ИТ и информационной безопасности. В фокусе — навыки
+      документирования и публикации результатов.
     </p>
 
     <div class="split">
-
       <div>
-        <h3>Цель и задачи</h3>
-
+        <h3 class="section-title" style="margin-top:0">Цель и задачи</h3>
+        <p>            Создать учебный репозиторий и статический сайт, отражающий выполнение
+          базовой части задания на проектную практику: работа с Git, Markdown,
+          HTML/CSS, взаимодействие с организацией-партнёром и подготовка отчёта.
+        </p>
         <ul class="timeline">
-          <li>Создание Git-репозитория.</li>
-          <li>Подготовка Markdown-документации.</li>
-          <li>Разработка HTML/CSS сайта.</li>
-          <li>Подготовка отчёта по практике.</li>
+          <li><strong>Git</strong> — репозиторий, ветки, регулярные коммиты.</li>
+          <li><strong>Markdown</strong> — описание, журнал, отчёт о партнёре.</li>
+          <li><strong>Сайт</strong> — разделы: главная, о проекте, участники, журнал, ресурсы.</li>
+          <li><strong>Партнёр</strong> — встреча или мероприятие + отчёт в репозитории.</li>
+          <li><strong>Отчёт</strong> — DOCX и PDF в папке <code>reports</code>.</li>
         </ul>
       </div>
-
-      <img src="images/git-repo.png"
-           alt="Git репозиторий" />
-
+      <img src="images/git-repo.png" alt="Схема этапов работы с Git" width="400" height="240" />
     </div>
 
+    <h3 class="section-title">Содержание практики</h3>
+    <div class="card-grid">
+      <article class="card">
+        <img src="images/markdown-doc.png" alt="Markdown" />
+        <h3>Документы</h3>
+        <p>            Все материалы проекта хранятся в репозитории в формате Markdown:
+          описание, ход работ, отчёт о взаимодействии с партнёром.
+        </p>
+      </article>
+      <article class="card">
+        <img src="images/web-stack.png" alt="Веб-стек" />
+        <h3>Веб-сайт</h3>
+        <p>            Один HTML-файл с разделами, иллюстрациями и встроенным видео.
+          Стили вынесены в <code>site/css/style.css</code>.
+        </p>
+      </article>
+      <article class="card">
+        <img src="images/partner-meeting.png" alt="Встреча с партнёром" />
+        <h3>Партнёрская организация</h3>
+        <p>            Взаимодействие организуется через куратора проектной деятельности
+          и ответственного по практике (онлайн-встреча, экскурсия или стажировка).
+        </p>
+      </article>
+    </div>
+
+    <div class="split reverse">
+      <img src="images/partner-meeting.png" alt="Онлайн-встреча с организацией-партнёром" width="400" height="240" />
+      <div>          <h3 class="section-title" style="margin-top:0">Отчёт о взаимодействии</h3>
+        <p>            Краткий отчёт о встрече с представителем IT-профильной организации
+          размещён в репозитории: файл
+          <a href="../docs/partner_report.md">docs/partner_report.md</a>.
+          В отчёте описаны цели встречи, полученные знания и связь с темой практики.
+        </p>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <img src="images/git-repo.png" alt="Git" />
+      <img src="images/markdown-doc.png" alt="Документация" />
+      <img src="images/web-stack.png" alt="Вёрстка" />
+    </div>
   </section>
 
+  <!-- Участники -->
+  <section class="page-section" id="participants" aria-labelledby="participants-title">
+    <h2 class="page-title" id="participants-title">Участники</h2>
+    <p class="page-intro">
+      Практика выполняется индивидуально. Ниже — роль и личный вклад участника
+      в проект по дисциплине «Проектная деятельность» в рамках учебной практики.
+    </p>
+
+    <article class="card member-card">
+      <img class="member-photo" src="images/member-avatar.png" alt="Тарасов Артём" width="120" height="120" />
+      <div>          <h3 style="margin:0 0 0.25rem;font-size:1.25rem">Тарасов Артём Сергеевич</h3>
+        <p style="margin:0;color:var(--muted)">Участник 1 · группа 251-332 · направление 09.03.02</p>
+        <p style="margin:1rem 0 0">
+          Ответственный по проектной (учебной) практике в учебной группе.
+          Координирует выполнение базовой части задания и ведение репозитория.
+        </p>
+        <h4 style="margin:1.25rem 0 0.5rem;font-size:1rem">Личный вклад</h4>
+        <ul class="contribution-list">
+          <li>Создание и настройка Git-репозитория, ветвление, осмысленные коммиты.</li>
+          <li>Подготовка README и документов в Markdown (журнал, отчёт о партнёре).</li>
+          <li>Проектирование структуры сайта и вёрстка страницы на HTML.</li>
+          <li>Разработка дизайна и файла стилей <code>site/css/style.css</code>.</li>
+          <li>Создание иллюстраций (PNG) в каталоге <code>site/images/</code>.</li>
+          <li>Ведение журнала прогресса на сайте (не менее трёх записей).</li>
+          <li>Подбор ресурсов, оформление раздела «Ресурсы» и отчёт по практике.</li>
+          <li>Организация взаимодействия с организацией-партнёром через куратора.</li>
+        </ul>
+      </div>
+    </article>
+
+    <h3 class="section-title">Распределение задач</h3>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Техническая часть</h3>
+        <p>Git, структура репозитория, HTML/CSS, публикация сайта из папки <code>site/</code>.</p>
+      </div>
+      <div class="card">
+        <h3>Документация</h3>
+        <p>Markdown-файлы, отчёт о партнёре, подготовка DOCX/PDF для папки <code>reports</code>.</p>
+      </div>
+      <div class="card">
+        <h3>Коммуникация</h3>
+        <p>Связь с куратором и ответственным по практике, фиксация мероприятий в журнале.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Журнал -->
+  <section class="page-section page-section--alt" id="journal" aria-labelledby="journal-title">
+    <h2 class="page-title" id="journal-title">Журнал прогресса</h2>
+    <p class="page-intro">
+      Хроника основных этапов проектной (учебной) практики с февраля по май 2026 года.
+    </p>
+
+    <div class="journal-list">
+      <article class="journal-post">
+        <img src="images/journal-1.png" alt="Настройка Git" width="320" height="200" />
+        <div>            <h3>Запуск репозитория и изучение Git</h3>
+          <span class="journal-date">3 февраля 2026</span>
+          <p>              Создан репозиторий по шаблону практики, выполнено клонирование на локальную
+            машину. Освоены команды <code>status</code>, <code>add</code>, <code>commit</code>,
+            <code>push</code> и создание ветки для черновиков сайта. Согласованы правила
+            сообщений к коммитам на русском и английском языках.
+          </p>
+        </div>
+      </article>
+
+      <article class="journal-post">
+        <img src="images/journal-2.png" alt="Вёрстка сайта" width="320" height="200" />
+        <div>            <h3>Структура сайта и документация Markdown</h3>
+          <span class="journal-date">12 апреля 2026</span>
+          <p>              Подготовлен README с таблицей участников и периодом практики. Начата
+            вёрстка разделов в <code>index.html</code>. Добавлены PNG-иллюстрации
+            в <code>site/images/</code>. Оформлен черновик отчёта о встрече с
+            организацией-партнёром.
+          </p>
+        </div>
+      </article>
+
+      <article class="journal-post">
+        <img src="images/partner-meeting.png" alt="Встреча с партнёром" width="320" height="200" />
+        <div>            <h3>Онлайн-встреча с организацией-партнёром</h3>
+          <span class="journal-date">28 апреля 2026</span>
+          <p>              Проведена видеоконференция с IT-отделом партнёрской организации по
+            согласованию с куратором. Обсуждены требования к документации в Git,
+            публикация статических страниц и участие в профильном митапе. Материалы
+            внесены в <code>docs/partner_report.md</code>.
+          </p>
+        </div>
+      </article>
+
+      <article class="journal-post">
+        <img src="images/journal-3.png" alt="Завершение сайта" width="320" height="200" />
+        <div>            <h3>Наполнение контентом и проверка</h3>
+          <span class="journal-date">18 мая 2026</span>
+          <p>              Завершены все разделы сайта, добавлены ресурсы и видео. Проверена
+            адаптивная вёрстка в браузере. Подготовлены файлы отчёта для загрузки
+            в СДО (DOCX и PDF в папке <code>reports</code>).
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Ресурсы -->
+  <section class="page-section" id="resources" aria-labelledby="resources-title">
+    <h2 class="page-title" id="resources-title">Ресурсы</h2>
+    <p class="page-intro">
+      Материалы, которые помогли выполнить базовую часть проектной практики:
+      Git, Markdown, вёрстка и отчётность.
+    </p>
+
+    <h3 class="section-title">Инструменты разработки</h3>
+    <ul class="resource-list">
+      <li>
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> —
+        хостинг репозитория и совместная работа с версиями.
+      </li>
+      <li>          <a href="https://gitverse.ru/" target="_blank" rel="noopener">GitVerse</a> —
+        альтернативная платформа для размещения репозиториев (допустима по заданию).
+      </li>
+      <li>          <a href="https://git-scm.com/doc" target="_blank" rel="noopener">Документация Git</a> —
+        официальное руководство по командам и workflow.
+      </li>
+      <li>          <a href="https://www.markdownguide.org/" target="_blank" rel="noopener">Markdown Guide</a> —
+        синтаксис для README и отчётов.
+      </li>
+      <li>          <a href="https://developer.mozilla.org/ru/docs/Web/HTML" target="_blank" rel="noopener">MDN: HTML</a> и
+        <a href="https://developer.mozilla.org/ru/docs/Web/CSS" target="_blank" rel="noopener">MDN: CSS</a> —
+        справочники по вёрстке статического сайта.
+      </li>
+      <li>          <a href="https://gohugo.io/getting-started/quick-start/" target="_blank" rel="noopener">Hugo Quick Start</a> —
+        генератор статических сайтов (рекомендован в задании как опция).
+      </li>
+    </ul>
+
+    <h3 class="section-title">Организация-партнёр и практика</h3>
+    <ul class="resource-list">
+      <li>
+        <a href="https://habr.com/ru/hub/it/" target="_blank" rel="noopener">Хабр — IT</a> —
+        статьи по разработке, документированию и карьере в IT.
+      </li>
+      <li>          <a href="../docs/partner_report.md">Отчёт о взаимодействии с партнёром</a> —
+        локальный файл в репозитории (Markdown).
+      </li>
+      <li>          <a href="https://www.w3.org/WAI/WCAG21/quickref/" target="_blank" rel="noopener">WCAG Quick Reference</a> —
+        рекомендации по доступности веб-страниц.
+      </li>
+    </ul>
+
+    <h3 class="section-title">Видео</h3>
+    <p style="color:var(--muted);margin-bottom:1rem">
+      Краткий обзор основ HTML для начинающих (использован при вёрстке сайта):
+    </p>
+    <div class="video-block">
+      <iframe
+              src="https://www.youtube.com/embed/UB1O30fR-EE"
+              title="Введение в HTML"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"></iframe>
+    </div>
+  </section>
 </main>
 
-<section class="page-section" id="participants">
-
-  <h2 class="page-title">Участники</h2>
-
-  <article class="card member-card">
-
-    <img class="member-photo"
-         src="images/member-avatar.png"
-         alt="Тарасов Артём" />
-
-    <div>
-
-      <h3>Тарасов Артём Сергеевич</h3>
-
-      <p>
-        Участник проекта и ответственный за разработку сайта.
-      </p>
-
-      <h4>Личный вклад</h4>
-
-      <ul class="contribution-list">
-        <li>Создание структуры сайта.</li>
-        <li>Настройка Git-репозитория.</li>
-        <li>Разработка HTML и CSS.</li>
-        <li>Подготовка отчётов.</li>
-      </ul>
-
-    </div>
-
-  </article>
-
-</section>
+<footer class="site-footer">
+  <p>© 2026 Проектная (учебная) практика · Тарасов Артём Сергеевич · группа 251-332</p>
+</footer>
 
 </body>
 </html>
