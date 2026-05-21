@@ -11,7 +11,7 @@
     --border: #d8e0e8;
     --shadow: 0 8px 24px rgba(26, 35, 50, 0.08);
     --radius: 12px;
-    --font: "Segoe UI", system-ui, sans-serif;
+    --font: "Segoe UI", system-ui, -apple-system, sans-serif;
     --max: 1100px;
 }
 
@@ -36,36 +36,47 @@ body {
 
 img {
     max-width: 100%;
+    height: auto;
     display: block;
 }
 
 a {
     color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
 }
 
-/* Шапка */
+a:hover {
+    color: var(--accent-dark);
+}
+
+/* Шапка и навигация */
 
 .site-header {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 .header-inner {
     max-width: var(--max);
     margin: 0 auto;
     padding: 0.85rem 1.5rem;
-
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
 .logo {
     font-weight: 700;
-    text-decoration: none;
+    font-size: 1.15rem;
     color: var(--text);
+    text-decoration: none;
 }
 
 .logo span {
@@ -74,43 +85,66 @@ a {
 
 .nav-list {
     list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.25rem;
 }
 
 .nav-list a {
     text-decoration: none;
     color: var(--muted);
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
-/* Hero */
+.nav-list a:hover,
+.nav-list a.active {
+    color: var(--accent);
+}
+
+/* Герой */
 
 .hero {
-    background: linear-gradient(
-            135deg,
-            var(--accent-dark),
-            var(--accent)
-    );
-
+    background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent) 55%, #1a8a8a 100%);
     color: #fff;
-    padding: 4rem 1.5rem;
+    padding: 3.5rem 1.5rem 4rem;
 }
 
 .hero-inner {
     max-width: var(--max);
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
+    align-items: center;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    margin: 0 0 1rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.2;
 }
 
 .hero .lead {
+    margin: 0 0 1.5rem;
+    opacity: 0.92;
+    font-size: 1.1rem;
+}
+
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
     margin-bottom: 1.5rem;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
 }
 
 .btn {
@@ -119,10 +153,34 @@ a {
     color: var(--accent-dark);
     padding: 0.65rem 1.35rem;
     border-radius: 8px;
+    font-weight: 600;
     text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
 }
 
-/* Весь код из предыдущего коммита */
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    color: var(--accent-dark);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    margin-left: 0.75rem;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.hero-figure {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
 
 /* Основной контент */
 
@@ -134,34 +192,39 @@ main {
 
 .page-section {
     padding: 2.5rem 0;
+    scroll-margin-top: 4.5rem;
 }
 
 .page-section--alt {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     background: var(--surface);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
+}
 
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+#home {
+    scroll-margin-top: 0;
 }
 
 .page-title {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.6rem, 3vw, 2rem);
 }
 
 .page-intro {
     color: var(--muted);
-    margin-bottom: 2rem;
+    margin: 0 0 2rem;
+    max-width: 65ch;
 }
 
 .section-title {
-    margin: 2rem 0 1rem;
-    border-bottom: 3px solid var(--accent-light);
+    margin: 2.5rem 0 1.25rem;
+    font-size: 1.35rem;
     padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--accent-light);
 }
 
 /* Карточки */
@@ -178,23 +241,32 @@ main {
     border-radius: var(--radius);
     padding: 1.5rem;
     box-shadow: var(--shadow);
+    transition: transform 0.2s;
 }
 
-.card img {
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card img,
+.card .card-icon {
     width: 100%;
     height: 140px;
     object-fit: cover;
-
     border-radius: 8px;
     margin-bottom: 1rem;
+    background: var(--accent-light);
 }
 
 .card h3 {
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.6rem;
+    font-size: 1.1rem;
 }
 
 .card p {
+    margin: 0;
     color: var(--muted);
+    font-size: 0.98rem;
 }
 
 /* Галерея */
@@ -203,16 +275,15 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-
     margin-top: 2rem;
 }
 
 .gallery img {
     border-radius: var(--radius);
+    aspect-ratio: 4/3;
     object-fit: cover;
+    border: 1px solid var(--border);
 }
-
-/* Весь код из предыдущих коммитов */
 
 /* Участники */
 
@@ -220,19 +291,25 @@ main {
     display: grid;
     grid-template-columns: 120px 1fr;
     gap: 1.5rem;
+    align-items: start;
 }
 
 .member-photo {
     width: 120px;
     height: 120px;
-
     border-radius: 50%;
     object-fit: cover;
+    border: 3px solid var(--accent-light);
 }
 
 .contribution-list {
+    margin: 0.75rem 0 0;
     padding-left: 1.25rem;
     color: var(--muted);
+}
+
+.contribution-list li {
+    margin-bottom: 0.35rem;
 }
 
 /* Журнал */
@@ -247,22 +324,35 @@ main {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-
-    padding: 1.5rem;
-
+    padding: 1.5rem 1.75rem;
+    box-shadow: var(--shadow);
     display: grid;
     grid-template-columns: 180px 1fr;
     gap: 1.5rem;
+    align-items: start;
 }
 
 .journal-post img {
     border-radius: 8px;
+    aspect-ratio: 16/10;
     object-fit: cover;
 }
 
+.journal-post h3 {
+    margin: 0 0 0.35rem;
+}
+
 .journal-date {
+    display: inline-block;
+    font-size: 0.85rem;
     color: var(--accent);
     font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.journal-post p {
+    margin: 0;
+    color: var(--muted);
 }
 
 /* Ресурсы */
@@ -270,28 +360,100 @@ main {
 .resource-list {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .resource-list li {
     background: var(--surface);
     border: 1px solid var(--border);
-
     border-radius: var(--radius);
     padding: 1rem 1.25rem;
-
     margin-bottom: 0.75rem;
+    box-shadow: var(--shadow);
+}
+
+.resource-list a {
+    font-weight: 600;
 }
 
 .video-block {
     margin-top: 2rem;
-    overflow: hidden;
     border-radius: var(--radius);
-
+    overflow: hidden;
     aspect-ratio: 16/9;
+    background: #000;
 }
 
 .video-block iframe {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+/* Двухколоночный блок */
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.split.reverse {
+    direction: rtl;
+}
+
+.split.reverse > * {
+    direction: ltr;
+}
+
+.timeline {
+    border-left: 3px solid var(--accent);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.timeline li {
+    margin-bottom: 1rem;
+    color: var(--muted);
+}
+
+.timeline strong {
+    color: var(--text);
+}
+
+/* Подвал */
+
+.site-footer {
+    background: var(--text);
+    color: #c8d0da;
+    text-align: center;
+    padding: 1.75rem 1.5rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+.site-footer a {
+    color: #7dd8d8;
+}
+
+/* Адаптив */
+
+@media (max-width: 768px) {
+    .hero-inner,
+    .split,
+    .journal-post,
+    .member-card {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-outline {
+        margin-left: 0;
+        margin-top: 0.75rem;
+    }
 }
